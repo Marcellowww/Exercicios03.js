@@ -1,9 +1,29 @@
-    body {
-        background-image: url(./img/f012e388a7a74441228bb106de1c471d.gif);
+    .background {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        display: block;
+        background-image: url('../img/f012e388a7a74441228bb106de1c471d.gif');
         background-size: 165px;
+        width: 1980px;
+        height: 800px;
+        -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+        filter: blur(3px);
     }
 
-    
+    .content {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        margin-left: 20px;
+        margin-right: 20px;
+
+    }
     .tituloh1 {
         text-align: center;
         font-size: 75px;
@@ -70,7 +90,7 @@
     .nextPage {
         display: flex;
         justify-content: center;
-        margin-top: 10px;
+        margin-bottom: 30px;
     }
 
     .ancora {
