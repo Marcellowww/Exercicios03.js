@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Adivinhe o número</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script>
+        let num = gerador();
+        console.log(num)
+
+        function gerador() { return Math.round(Math.random() * 100); }
+
+        function acertou() {
+            document.getElementById('errou').style.display = "none";
+            document.getElementById('acertou').style.display = "block";
+            nextPage();
+            return num = gerador()
+        }
+        function errou() {
+            document.getElementById('acertou').style.display = "none";
+            document.getElementById('errou').style.display = "block";
+            nextPage();
+        }
+
+        function nextPage() { document.getElementById('nextPage').style.display = "block" }
+
+        function verificar() {
+            const numero = document.getElementById('numero').value;
+            if (numero == "") {
+                alert("Você não inseriu nenhum número");
+                return;
+            }
+
+            if (numero == num) { acertou(); } else { errou(); }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="background"></div>
+    <main class="content">
+
+        <h1 class="tituloh1">Adivinhe o número</h1>
+        <p class="paragrafo">Foi sorteado um número entre 1 e 100, tente acertar!</p>
+
+        <div class="form">
+            <div class="container">
+                <label class="paragrafo label">Digite um número de 1 a 100</label>
+                <input type="number" id="numero" class="input">
+                <button class="btn" onclick="verificar()">Verificar</button>
+            </div>
+        </div>
+
+        <div id="acertou" style="display: none;" class="resultado">
+            <h2 class="tituloh2" id="acertoutxt">Você acertou!! Outro número foi gerado.</h2>
+        </div>
+
+        <div id="errou" style="display: none;" class="resultado">
+            <h2 class="tituloh2" id="erroutxt">Você errou!</h2>
+        </div>
+
+        <center>
+            <div class="nextPage" id="nextPage" style="display: none;">
+                <button class="btn btnpage"><a href="contadorDeClicks.html" class="ancora">Ir para a próxima pagina</a></button>
+            </div>
+        </center>
+    </main>
+</body>
+
+</html>
