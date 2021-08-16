@@ -79,3 +79,9 @@ p {
     box-shadow: black 3px 3px 10px ;
     align-self: center;
 }
+
+.nextPage {
+    display: flex;
+    justify-content: center;
+    color: #B6AEAE;
+}
